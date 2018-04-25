@@ -52,7 +52,7 @@ Terms of service are included in LICENSE.txt. By using the RICOH THETA Plug-in S
       - RICOH THETA V
     * Firmware
       - ver.2.20.1 and above
-        - Information on checking and updating the firmware is [here](https://theta360.com/en/support/manual/s/content/pc/pc_09.html).
+        - Information on checking and updating the firmware is [here](https://theta360.com/en/support/manual/v/content/pc/pc_09.html).
   * Development Environment
     * This SDK has been confirmed to operate under the following conditions.
     * Operating System
@@ -98,9 +98,8 @@ Terms of service are included in LICENSE.txt. By using the RICOH THETA Plug-in S
 ------------------------------------------
 
 * Where to find the latest information
-
-  - The latest information is published on [the WEB site](https://api.ricoh/docs/theta-plugin/).
-  - The latest SDK is released on [the GitHub project](https://github.com/ricohapi/theta-plugin-sdk/).
+  * The latest information is published on [the WEB site](https://api.ricoh/docs/theta-plugin/). 
+  * The latest SDK is released on [the GitHub project](https://github.com/ricohapi/theta-plugin-sdk/). 
 
 ------------------------------------------
 
