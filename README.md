@@ -1,34 +1,25 @@
-===========================================================
-
-README for "RICOH THETA Plug-in SDK"
+# RICOH THETA Plug-in SDK
 
 Version: 0.9.0
 
-===========================================================
+## Contents
 
-This file explains the RICOH THETA Plug-in SDK.
+* [Terms of Service](#terms)
+* [Files included in the archive](#files)
+* [Technical requirements for development](#requirements)
+* [Contents of the SDK](#contents)
+* [Getting Started](#started)
+* [Where to find the latest information](#information)
+* [Troubleshooting](#troubleshooting)
+* [Trademark Information](#trademark)
 
----------------------------------------
+<a name="terms"></a>
+## Terms of Service
 
-* Document Contents
-  * Terms of Service
-  * Files included in the archive
-  * Technical requirements for development
-  * About the SDK
-  * Using the SDK
-  * Where to find the latest SDK
-  * Troubleshooting
-  * Trademark Information
+Terms of service are included in [LICENSE.txt](LICENSE.txt). By using the RICOH THETA Plug-in SDK, you are agreeing to the license terms. Copyright &copy; 2018 Ricoh Company, Ltd.
 
----------------------------------------
-
-* Terms of Service
-
-Terms of service are included in LICENSE.txt. By using the RICOH THETA Plug-in SDK, you are agreeing to the license terms. Copyright &copy; 2018 Ricoh Company, Ltd.
-
-------------------------------------------
-
-* Files included in the archive
+<a name="files"></a>
+## Files included in the archive
 
 ```
 ├── README.md:            This file
@@ -43,81 +34,96 @@ Terms of service are included in LICENSE.txt. By using the RICOH THETA Plug-in S
 └── settings.gradle:      Android Studio build script
 ```
 
-------------------------------------------
+<a name="requirements"></a>
+## Technical requirements for development
 
-* Technical requirements for development
-  * The SDK was tested with a RICOH THETA V under the following conditions.
-  * Camera
-    * Hardware
-      - RICOH THETA V
-    * Firmware
-      - ver.2.20.1 and above
-        - Information on checking and updating the firmware is [here](https://theta360.com/en/support/manual/v/content/pc/pc_09.html).
-  * Development Environment
-    * This SDK has been confirmed to operate under the following conditions.
-    * Operating System
-      * Windows 10 Version 1709
-      * macOS High Sierra ver.10.13
-    * Development environment
-      * Android&trade; Studio 3.1+
-      * gradle 3.1.1
-      * Android&trade; SDK (API Level 25)
-      * compileSdkVersion 26
-      * buildToolsVersion "27.0.3"
-      * minSdkVersion 25
-      * targetSdkVersion 25
-------------------------------------------
+The SDK was tested with a RICOH THETA V under the following conditions.
 
-* Contents of the SDK
-  - This SDK is a Plug-in sample project of Android&trade; Studio.
-  - This SDK implements the basic parts necessary for developing plug-ins. You can create your own development project based on this project.
-  - This SDK includes a plug-in library (pluginlibrary) to support plug-in development of RICOH THETA. The plug-in library is the main part of the SDK, with its own part of the RICOH THETA plug-in being consolidated.
-  - The plug-in library implements the following functions that a standard plug-in should implement.
-    - Get button operation event
-    - Plug-in termination processing
-    - LED control
-    - Control of speaker
+### Camera
 
+#### Hardware
 
-* Getting Started
-  1. Import plug-in sdk as a project into Android&trade; Studio.
-  2. Please rewrite the sample program in app accordingly and create a program.
-    - By inheriting PluginActivity you will be able to use library methods.
+* RICOH THETA V
 
-            public class MainActivity extends PluginActivity {
-                    @Override
-                    protected void onCreate (Bundle savedInstanceState) {
-                        super.onCreate (savedInstanceState);
-                        setContentView (R.layout.activity_main);
+#### Firmware
 
-    - Please refer to [the web SDK document](https://api.ricoh/docs/theta-plugin/) for development precautions.
-  3. Please connect RICOH THETA V with USB.
-  4. By running it, installing and debuging is possible.
-  5. To build for distribution, build "apk" with "Build APK (s)" in the Build menu.
+* ver.2.20.1 and above
 
-------------------------------------------
+    > Information on checking and updating the firmware is [here](https://theta360.com/en/support/manual/v/content/pc/pc_09.html).
 
-* Where to find the latest information
-  * The latest information is published on [the WEB site](https://api.ricoh/docs/theta-plugin/). 
-  * The latest SDK is released on [the GitHub project](https://github.com/ricohapi/theta-plugin-sdk/). 
+### Development Environment
 
-------------------------------------------
+This SDK has been confirmed to operate under the following conditions.
 
-* Troubleshooting
+#### Operating System
 
-   If you have a request, create an issue on [the GitHub project](https://github.com/ricohapi/theta-plugin-sdk/issues).
+* Windows 10 Version 1709
+* macOS High Sierra ver.10.13
 
-------------------------------------------
+#### Development environment
 
-* Trademark Information
+* Android&trade; Studio 3.1+
+* gradle 3.1.1
+* Android&trade; SDK (API Level 25)
+* compileSdkVersion 26
+* buildToolsVersion "27.0.3"
+* minSdkVersion 25
+* targetSdkVersion 25
 
-  The names of products and services described in this document are trademarks or registered trademarks of each company.
-  * Android, Nexus, Google Chrome, Google Play, Google Play logo, Google Maps, Google+, Gmail, Google Drive, Google Cloud Print and YouTube are trademarks of Google Inc.
-  * Apple, Apple logo, Macintosh, Mac, Mac OS, OS X, AppleTalk, Apple TV, App Store, AirPrint, Bonjour, iPhone, iPad, iPad mini, iPad Air, iPod, iPod mini, iPod classic, iPod touch, iWork, Safari, the App Store logo, the AirPrint logo, Retina and iPad Pro are trademarks of Apple Inc., registered in the United States and other countries. The App Store is a service mark of Apple Inc.
-  * Bluetooth Low Energy and Bluetooth are trademarks or registered trademarks of US Bluetooth SIG, INC., in the United States and other countries.
-  * Microsoft, Windows, Windows Vista, Windows Live, Windows Media, Windows Server System, Windows Server, Excel, PowerPoint, Photosynth, SQL Server, Internet Explorer, Azure, Active Directory, OneDrive, Outlook, Wingdings, Hyper-V, Visual Basic, Visual C ++, Surface, SharePoint Server, Microsoft Edge, Active Directory, BitLocker, .NET Framework and Skype are registered trademarks or trademarks of Microsoft Corporation in the United States and other countries. The name of Skype, the trademarks and logos associated with it, and the "S" logo are trademarks of Skype or its affiliates.
-  * Wi-Fi™, Wi-Fi Certified Miracast, Wi-Fi Certified logo, Wi-Fi Direct, Wi-Fi Protected Setup, WPA, WPA 2 and Miracast are trademarks of the Wi-Fi Alliance.
-  * The official name of Windows is Microsoft Windows Operating System.
-  * All other trademarks belong to their respective owners.
+<a name="contents"></a>
+## Contents of the SDK
 
-------------------------------------------
+* This SDK is a Plug-in sample project of Android&trade; Studio.
+* This SDK implements the basic parts necessary for developing plug-ins. You can create your own development project based on this project.
+* This SDK includes a plug-in library ([pluginlibrary](pluginlibrary)) to support plug-in development of RICOH THETA. The plug-in library is the main part of the SDK, with its own part of the RICOH THETA plug-in being consolidated.
+* The plug-in library implements the following functions that a standard plug-in should implement.
+    * Get button operation event
+    * Plug-in termination processing
+    * LED control
+    * Control of speaker
+
+<a name="started"></a>
+## Getting Started
+
+1. Import plug-in sdk as a project into Android&trade; Studio.
+1. Please rewrite the sample program in app accordingly and create a program.
+
+    * By inheriting `PluginActivity` you will be able to use library methods.
+
+        ```java
+        public class MainActivity extends PluginActivity {
+            @Override
+            protected void onCreate (Bundle savedInstanceState) {
+                super.onCreate (savedInstanceState);
+                setContentView (R.layout.activity_main);
+        ```
+
+    * Please refer to [the web SDK document](https://api.ricoh/docs/theta-plugin/) for development precautions.
+
+1. Please connect RICOH THETA V with USB.
+1. By running it, installing and debuging is possible.
+1. To build for distribution, build *apk* with *Build APK (s)* in the Build menu.
+
+<a name="information"></a>
+## Where to find the latest information
+
+* The latest information is published on [the WEB site](https://api.ricoh/docs/theta-plugin/).
+* The latest SDK is released on [the GitHub project](https://github.com/ricohapi/theta-plugin-sdk).
+
+<a name="troubleshooting"></a>
+## Troubleshooting
+
+If you have a request, create an issue on [the GitHub project](https://github.com/ricohapi/theta-plugin-sdk/issues).
+
+<a name="trademark"></a>
+## Trademark Information
+
+The names of products and services described in this document are trademarks or registered trademarks of each company.
+
+* Android, Nexus, Google Chrome, Google Play, Google Play logo, Google Maps, Google+, Gmail, Google Drive, Google Cloud Print and YouTube are trademarks of Google Inc.
+* Apple, Apple logo, Macintosh, Mac, Mac OS, OS X, AppleTalk, Apple TV, App Store, AirPrint, Bonjour, iPhone, iPad, iPad mini, iPad Air, iPod, iPod mini, iPod classic, iPod touch, iWork, Safari, the App Store logo, the AirPrint logo, Retina and iPad Pro are trademarks of Apple Inc., registered in the United States and other countries. The App Store is a service mark of Apple Inc.
+* Bluetooth Low Energy and Bluetooth are trademarks or registered trademarks of US Bluetooth SIG, INC., in the United States and other countries.
+* Microsoft, Windows, Windows Vista, Windows Live, Windows Media, Windows Server System, Windows Server, Excel, PowerPoint, Photosynth, SQL Server, Internet Explorer, Azure, Active Directory, OneDrive, Outlook, Wingdings, Hyper-V, Visual Basic, Visual C ++, Surface, SharePoint Server, Microsoft Edge, Active Directory, BitLocker, .NET Framework and Skype are registered trademarks or trademarks of Microsoft Corporation in the United States and other countries. The name of Skype, the trademarks and logos associated with it, and the "S" logo are trademarks of Skype or its affiliates.
+* Wi-Fi™, Wi-Fi Certified Miracast, Wi-Fi Certified logo, Wi-Fi Direct, Wi-Fi Protected Setup, WPA, WPA 2 and Miracast are trademarks of the Wi-Fi Alliance.
+* The official name of Windows is Microsoft Windows Operating System.
+* All other trademarks belong to their respective owners.
