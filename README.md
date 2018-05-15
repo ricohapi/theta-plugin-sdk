@@ -16,7 +16,11 @@ Version: 0.9.0
 <a name="terms"></a>
 ## Terms of Service
 
-Terms of service are included in [LICENSE.txt](LICENSE.txt). By using the RICOH THETA Plug-in SDK, you are agreeing to the license terms. Copyright &copy; 2018 Ricoh Company, Ltd.
+> You agree to comply with all applicable export and import laws and regulations applicable to the jurisdiction in which the Software was obtained and in which it is used. Without limiting the foregoing, in connection with use of the Software, you shall not export or re-export the Software  into any U.S. embargoed countries (currently including, but necessarily limited to, Crimea – Region of Ukraine, Cuba, Iran, North Korea, Sudan and Syria) or  to anyone on the U.S. Treasury Department’s list of Specially Designated Nationals or the U.S. Department of Commerce Denied Person’s List or Entity List.  By using the Software, you represent and warrant that you are not located in any such country or on any such list.  You also agree that you will not use the Software for any purposes prohibited by any applicable laws, including, without limitation, the development, design, manufacture or production of missiles, nuclear, chemical or biological weapons. 
+
+By using the RICOH THETA Plug-in SDK, you are agreeing to the above and the license terms, [LICENSE.txt](LICENSE.txt). 
+
+Copyright &copy; 2018 Ricoh Company, Ltd.
 
 <a name="files"></a>
 ## Files included in the archive
