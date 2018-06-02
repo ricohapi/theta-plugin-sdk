@@ -80,8 +80,12 @@ public abstract class PluginActivity extends AppCompatActivity {
                 }
                 notificationSuccess();
             } else {
-                if (mKeyCallback != null && event.getRepeatCount() == 0) {
-                    mKeyCallback.onKeyDown(keyCode, event);
+                if (mKeyCallback != null) {
+                    if (event.getRepeatCount() == 0) {
+                        mKeyCallback.onKeyDown(keyCode, event);
+                    } else if (event.isLongPress()) {
+                        mKeyCallback.onKeyLongPress(keyCode, event);
+                    }
                 }
             }
         }
