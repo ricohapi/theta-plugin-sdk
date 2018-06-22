@@ -1,6 +1,6 @@
 # RICOH THETA Plug-in SDK
 
-Version: 0.9.0
+Version: 1.0.0
 
 ## Contents
 
@@ -16,9 +16,9 @@ Version: 0.9.0
 <a name="terms"></a>
 ## Terms of Service
 
-> You agree to comply with all applicable export and import laws and regulations applicable to the jurisdiction in which the Software was obtained and in which it is used. Without limiting the foregoing, in connection with use of the Software, you shall not export or re-export the Software  into any U.S. embargoed countries (currently including, but necessarily limited to, Crimea – Region of Ukraine, Cuba, Iran, North Korea, Sudan and Syria) or  to anyone on the U.S. Treasury Department’s list of Specially Designated Nationals or the U.S. Department of Commerce Denied Person’s List or Entity List.  By using the Software, you represent and warrant that you are not located in any such country or on any such list.  You also agree that you will not use the Software for any purposes prohibited by any applicable laws, including, without limitation, the development, design, manufacture or production of missiles, nuclear, chemical or biological weapons. 
+> You agree to comply with all applicable export and import laws and regulations applicable to the jurisdiction in which the Software was obtained and in which it is used. Without limiting the foregoing, in connection with use of the Software, you shall not export or re-export the Software  into any U.S. embargoed countries (currently including, but necessarily limited to, Crimea – Region of Ukraine, Cuba, Iran, North Korea, Sudan and Syria) or  to anyone on the U.S. Treasury Department’s list of Specially Designated Nationals or the U.S. Department of Commerce Denied Person’s List or Entity List.  By using the Software, you represent and warrant that you are not located in any such country or on any such list.  You also agree that you will not use the Software for any purposes prohibited by any applicable laws, including, without limitation, the development, design, manufacture or production of missiles, nuclear, chemical or biological weapons.
 
-By using the RICOH THETA Plug-in SDK, you are agreeing to the above and the license terms, [LICENSE.txt](LICENSE.txt). 
+By using the RICOH THETA Plug-in SDK, you are agreeing to the above and the license terms, [LICENSE.txt](LICENSE.txt).
 
 Copyright &copy; 2018 Ricoh Company, Ltd.
 
@@ -51,7 +51,7 @@ The SDK was tested with a RICOH THETA V under the following conditions.
 
 #### Firmware
 
-* ver.2.20.1 and above
+* ver.2.30.1 and above
 
     > Information on checking and updating the firmware is [here](https://theta360.com/en/support/manual/v/content/pc/pc_09.html).
 
@@ -67,7 +67,7 @@ This SDK has been confirmed to operate under the following conditions.
 #### Development environment
 
 * Android&trade; Studio 3.1+
-* gradle 3.1.1
+* gradle 3.1.3
 * Android&trade; SDK (API Level 25)
 * compileSdkVersion 26
 * buildToolsVersion "27.0.3"
