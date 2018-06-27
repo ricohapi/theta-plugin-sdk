@@ -80,8 +80,12 @@ public abstract class PluginActivity extends AppCompatActivity {
                 }
                 notificationSuccess();
             } else {
-                if (mKeyCallback != null && event.getRepeatCount() == 0) {
-                    mKeyCallback.onKeyDown(keyCode, event);
+                if (mKeyCallback != null) {
+                    if (event.getRepeatCount() == 0) {
+                        mKeyCallback.onKeyDown(keyCode, event);
+                    } else if (event.isLongPress()) {
+                        mKeyCallback.onKeyLongPress(keyCode, event);
+                    }
                 }
             }
         }
@@ -191,14 +195,30 @@ public abstract class PluginActivity extends AppCompatActivity {
     }
 
     /**
+     * Turn on LED3 with color
+     *
+     * @param ledTarget target LED
+     */
+    public void notificationLed3Show(@NonNull LedColor ledColor) {
+       Intent intent = new Intent(ACTION_LED_SHOW);
+       intent.putExtra(TARGET, LedTarget.LED3.toString());
+       intent.putExtra(COLOR, ledColor.toString());
+       sendBroadcast(intent);
+    }
+
+    /**
      * Turn on LED
      *
      * @param ledTarget target LED
      */
     public void notificationLedShow(@NonNull LedTarget ledTarget) {
-        Intent intent = new Intent(ACTION_LED_SHOW);
-        intent.putExtra(TARGET, ledTarget.toString());
-        sendBroadcast(intent);
+        if (ledTarget == LedTarget.LED3) {
+            notificationLed3Show(LedColor.BLUE);
+        } else {
+            Intent intent = new Intent(ACTION_LED_SHOW);
+            intent.putExtra(TARGET, ledTarget.toString());
+            sendBroadcast(intent);
+        }
     }
 
     /**
@@ -206,14 +226,14 @@ public abstract class PluginActivity extends AppCompatActivity {
      *
      * @param ledTarget target LED
      * @param ledColor color
-     * @param period period 1-2000 (msec)
+     * @param period period 250-2000 (msec)
      */
     public void notificationLedBlink(@NonNull LedTarget ledTarget, LedColor ledColor, int period) {
         if (ledColor == null) {
             ledColor = LedColor.BLUE;
         }
-        if (period < 1) {
-            period = 1;
+        if (period < 250) {
+            period = 250;
         }
         if (period > 2000) {
             period = 2000;
