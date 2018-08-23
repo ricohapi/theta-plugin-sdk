@@ -1,6 +1,6 @@
 # RICOH THETA Plug-in SDK
 
-Version: 1.0.0
+Version: 1.0.1
 
 ## Contents
 
@@ -67,7 +67,7 @@ This SDK has been confirmed to operate under the following conditions.
 #### Development environment
 
 * Android&trade; Studio 3.1+
-* gradle 3.1.3
+* gradle 3.1.4
 * Android&trade; SDK (API Level 25)
 * compileSdkVersion 26
 * buildToolsVersion "27.0.3"
