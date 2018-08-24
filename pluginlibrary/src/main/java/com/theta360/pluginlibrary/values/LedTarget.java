@@ -20,12 +20,12 @@ package com.theta360.pluginlibrary.values;
  * LedTarget
  */
 public enum LedTarget {
-    LED3("LED3"),
-    LED4("LED4"),
-    LED5("LED5"),
-    LED6("LED6"),
-    LED7("LED7"),
-    LED8("LED8"),;
+    LED3("LED3"),//WLAN
+    LED4("LED4"),//Still
+    LED5("LED5"),//Video
+    LED6("LED6"),//Live
+    LED7("LED7"),//Video recording
+    LED8("LED8");//Error
 
     private final String mLedTarget;
 
