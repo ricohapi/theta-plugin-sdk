@@ -109,7 +109,6 @@ public abstract class PluginActivity extends AppCompatActivity {
                     @Override
                     public void onException(String message) {
                         notificationError(message);
-                        finishAndRemoveTask();
                     }
                 });
         Thread.setDefaultUncaughtExceptionHandler(uncaughtException);
