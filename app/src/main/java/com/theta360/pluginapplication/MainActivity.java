@@ -39,6 +39,8 @@ public class MainActivity extends PluginActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Set enable to close by pluginlibrary, If you set false, please call close() after finishing your end processing.
+        setAutoClose(true);
         // Set a callback when a button operation event is acquired.
         setKeyCallback(new KeyCallback() {
             @Override
@@ -64,8 +66,21 @@ public class MainActivity extends PluginActivity {
 
             @Override
             public void onKeyLongPress(int keyCode, KeyEvent event) {
-                notificationError("");
+
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        // Do end processing
+        close();
+
+        super.onPause();
     }
 }
