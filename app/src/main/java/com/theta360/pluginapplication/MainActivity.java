@@ -79,7 +79,7 @@ public class MainActivity extends PluginActivity {
     @Override
     protected void onPause() {
         // Do end processing
-        close();
+        //close();
 
         super.onPause();
     }
