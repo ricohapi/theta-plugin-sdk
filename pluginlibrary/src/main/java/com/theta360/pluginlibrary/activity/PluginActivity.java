@@ -67,7 +67,7 @@ public abstract class PluginActivity extends AppCompatActivity {
 
     private boolean isCamera = false;
     private boolean isAutoClose = true;
-    private boolean isClose = false;
+    private boolean isClosed = false;
     private KeyCallback mKeyCallback;
     private KeyReceiver mKeyReceiver;
     private KeyReceiver.Callback onKeyReceiver = new KeyReceiver.Callback() {
@@ -128,7 +128,7 @@ public abstract class PluginActivity extends AppCompatActivity {
 
     @Override
     protected void onPause() {
-        if (!isClose) {
+        if (!isClosed) {
             close();
         }
         unregisterReceiver(mKeyReceiver);
@@ -153,7 +153,7 @@ public abstract class PluginActivity extends AppCompatActivity {
      * End processing
      */
     public void close() {
-        isClose = true;
+        isClosed = true;
         if (isCamera) {
             notificationCameraOpen();
         }
