@@ -147,7 +147,6 @@ public abstract class PluginActivity extends AppCompatActivity {
         return isApConnected;
     }
 
-
     public void notificationCameraOpen() {
         isCamera = false;
         sendBroadcast(new Intent(Constants.ACTION_MAIN_CAMERA_OPEN));
