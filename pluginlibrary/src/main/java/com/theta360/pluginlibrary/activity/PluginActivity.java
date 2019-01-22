@@ -82,7 +82,6 @@ public abstract class PluginActivity extends AppCompatActivity {
                 new Callback() {
                     @Override
                     public void onException(String message) {
-                        notificationExternalWebapiAccessOn();
                         notificationError(message);
                     }
                 });
@@ -137,7 +136,6 @@ public abstract class PluginActivity extends AppCompatActivity {
         if (isCamera) {
             notificationCameraOpen();
         }
-        notificationExternalWebapiAccessOn();
         notificationSuccess();
     }
 
@@ -307,6 +305,9 @@ public abstract class PluginActivity extends AppCompatActivity {
         intent.putExtra(Constants.PACKAGE_NAME, getPackageName());
         intent.putExtra(Constants.EXIT_STATUS, ExitStatus.SUCCESS.toString());
         sendBroadcast(intent);
+
+        // When ACTION_EXTERNAL_WEBAPI_ACCESS_OFF is done, you need to cancel, please do not delete or comment.
+        notificationExternalWebapiAccessOn();
         finishAndRemoveTask();
     }
 
@@ -321,6 +322,9 @@ public abstract class PluginActivity extends AppCompatActivity {
         intent.putExtra(Constants.EXIT_STATUS, ExitStatus.FAILURE.toString());
         intent.putExtra(Constants.MESSAGE, message);
         sendBroadcast(intent);
+
+        // When ACTION_EXTERNAL_WEBAPI_ACCESS_OFF is done, you need to cancel, please do not delete or comment.
+        notificationExternalWebapiAccessOn();
         finishAndRemoveTask();
     }
 
