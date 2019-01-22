@@ -306,8 +306,6 @@ public abstract class PluginActivity extends AppCompatActivity {
         intent.putExtra(Constants.EXIT_STATUS, ExitStatus.SUCCESS.toString());
         sendBroadcast(intent);
 
-        // When ACTION_EXTERNAL_WEBAPI_ACCESS_OFF is done, you need to cancel, please do not delete or comment.
-        notificationExternalWebapiAccessOn();
         finishAndRemoveTask();
     }
 
@@ -323,8 +321,6 @@ public abstract class PluginActivity extends AppCompatActivity {
         intent.putExtra(Constants.MESSAGE, message);
         sendBroadcast(intent);
 
-        // When ACTION_EXTERNAL_WEBAPI_ACCESS_OFF is done, you need to cancel, please do not delete or comment.
-        notificationExternalWebapiAccessOn();
         finishAndRemoveTask();
     }
 

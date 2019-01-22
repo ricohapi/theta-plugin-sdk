@@ -69,6 +69,9 @@ public class MainActivity extends PluginActivity {
 
             }
         });
+
+        // Please use onCreate when using ACTION_EXTERNAL_WEBAPI_ACCESS_OFF
+        //notificationExternalWebapiAccessOff();
     }
 
     @Override
