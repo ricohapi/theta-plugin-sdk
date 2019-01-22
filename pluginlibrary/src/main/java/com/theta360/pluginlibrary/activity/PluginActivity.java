@@ -82,6 +82,7 @@ public abstract class PluginActivity extends AppCompatActivity {
                 new Callback() {
                     @Override
                     public void onException(String message) {
+                        notificationExternalWebapiAccessOn();
                         notificationError(message);
                     }
                 });
@@ -136,6 +137,7 @@ public abstract class PluginActivity extends AppCompatActivity {
         if (isCamera) {
             notificationCameraOpen();
         }
+        notificationExternalWebapiAccessOn();
         notificationSuccess();
     }
 
@@ -284,6 +286,16 @@ public abstract class PluginActivity extends AppCompatActivity {
     public void notificationDatabaseUpdate(@NonNull String[] targets) {
         Intent intent = new Intent(Constants.ACTION_DATABASE_UPDATE);
         intent.putExtra(Constants.TARGETS, targets);
+        sendBroadcast(intent);
+    }
+
+    public void notificationExternalWebapiAccessOn() {
+        Intent intent = new Intent(Constants.ACTION_EXTERNAL_WEBAPI_ACCESS_ON);
+        sendBroadcast(intent);
+    }
+
+    public void notificationExternalWebapiAccessOff(@NonNull String[] targets) {
+        Intent intent = new Intent(Constants.ACTION_EXTERNAL_WEBAPI_ACCESS_OFF);
         sendBroadcast(intent);
     }
 
