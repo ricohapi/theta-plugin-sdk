@@ -287,6 +287,16 @@ public abstract class PluginActivity extends AppCompatActivity {
         sendBroadcast(intent);
     }
 
+    public void notificationExternalWebapiAccessOn() {
+        Intent intent = new Intent(Constants.ACTION_EXTERNAL_WEBAPI_ACCESS_ON);
+        sendBroadcast(intent);
+    }
+
+    public void notificationExternalWebapiAccessOff() {
+        Intent intent = new Intent(Constants.ACTION_EXTERNAL_WEBAPI_ACCESS_OFF);
+        sendBroadcast(intent);
+    }
+
     /**
      * Notifying Completion of Plug-in when the plug-in ends normally
      */
@@ -295,6 +305,9 @@ public abstract class PluginActivity extends AppCompatActivity {
         intent.putExtra(Constants.PACKAGE_NAME, getPackageName());
         intent.putExtra(Constants.EXIT_STATUS, ExitStatus.SUCCESS.toString());
         sendBroadcast(intent);
+
+        // When ACTION_EXTERNAL_WEBAPI_ACCESS_OFF is done, you need to cancel, please do not delete or comment.
+        notificationExternalWebapiAccessOn();
         finishAndRemoveTask();
     }
 
@@ -309,6 +322,9 @@ public abstract class PluginActivity extends AppCompatActivity {
         intent.putExtra(Constants.EXIT_STATUS, ExitStatus.FAILURE.toString());
         intent.putExtra(Constants.MESSAGE, message);
         sendBroadcast(intent);
+
+        // When ACTION_EXTERNAL_WEBAPI_ACCESS_OFF is done, you need to cancel, please do not delete or comment.
+        notificationExternalWebapiAccessOn();
         finishAndRemoveTask();
     }
 
