@@ -74,6 +74,10 @@ public class MainActivity extends PluginActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        if (isApConnected()) {
+
+        }
     }
 
     @Override
