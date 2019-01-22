@@ -292,7 +292,7 @@ public abstract class PluginActivity extends AppCompatActivity {
         sendBroadcast(intent);
     }
 
-    public void notificationExternalWebapiAccessOff(@NonNull String[] targets) {
+    public void notificationExternalWebapiAccessOff() {
         Intent intent = new Intent(Constants.ACTION_EXTERNAL_WEBAPI_ACCESS_OFF);
         sendBroadcast(intent);
     }
