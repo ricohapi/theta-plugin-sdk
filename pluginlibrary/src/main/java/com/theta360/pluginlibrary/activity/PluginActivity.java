@@ -287,16 +287,6 @@ public abstract class PluginActivity extends AppCompatActivity {
         sendBroadcast(intent);
     }
 
-    public void notificationExternalWebapiAccessOn() {
-        Intent intent = new Intent(Constants.ACTION_EXTERNAL_WEBAPI_ACCESS_ON);
-        sendBroadcast(intent);
-    }
-
-    public void notificationExternalWebapiAccessOff() {
-        Intent intent = new Intent(Constants.ACTION_EXTERNAL_WEBAPI_ACCESS_OFF);
-        sendBroadcast(intent);
-    }
-
     /**
      * Notifying Completion of Plug-in when the plug-in ends normally
      */

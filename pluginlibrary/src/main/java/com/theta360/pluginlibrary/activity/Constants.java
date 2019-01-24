@@ -31,9 +31,6 @@ final class Constants {
     static final String ACTION_DATABASE_UPDATE = "com.theta360.plugin.ACTION_DATABASE_UPDATE";
     static final String TARGETS = "targets";
 
-    static final String ACTION_EXTERNAL_WEBAPI_ACCESS_ON = "com.theta360.plugin.ACTION_EXTERNAL_WEBAPI_ACCESS_ON";
-    static final String ACTION_EXTERNAL_WEBAPI_ACCESS_OFF = "com.theta360.plugin.ACTION_EXTERNAL_WEBAPI_ACCESS_OFF";
-
     static final String USER_OPTION = "USER_OPTION";
     static final String IS_AP_CONNECTED = "IS_AP_CONNECTED";
 }
