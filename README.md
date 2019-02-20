@@ -34,7 +34,6 @@ Copyright &copy; 2018 Ricoh Company, Ltd.
 ├── gradle.properties:    Android Studio build script
 ├── gradlew:              Android Studio build script
 ├── gradlew.bat:          Android Studio build script
-├── pluginlibrary:        Plug-in library (utility program)
 └── settings.gradle:      Android Studio build script
 ```
 
