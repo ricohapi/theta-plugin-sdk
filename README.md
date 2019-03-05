@@ -78,7 +78,7 @@ This SDK has been confirmed to operate under the following conditions.
 
 * This SDK is a Plug-in sample project of Android&trade; Studio.
 * This SDK implements the basic parts necessary for developing plug-ins. You can create your own development project based on this project.
-* This SDK includes a plug-in library ([pluginlibrary](pluginlibrary)) to support plug-in development of RICOH THETA. The plug-in library is the main part of the SDK, with its own part of the RICOH THETA plug-in being consolidated.
+* This SDK references a plug-in library ([pluginlibrary](https://github.com/ricohapi/theta-plugin-library)) to support plug-in development of RICOH THETA. 
 * The plug-in library implements the following functions that a standard plug-in should implement.
     * Get button operation event
     * Plug-in termination processing
