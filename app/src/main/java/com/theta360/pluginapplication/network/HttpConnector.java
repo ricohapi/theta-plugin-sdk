@@ -47,6 +47,7 @@ public class HttpConnector {
     private String mFingerPrint = null;
     private Timer mCheckStatusTimer = null;
     private HttpEventListener mHttpEventListener = null;
+    private HttpDeleteFileListener mHttpDeleteFileListener = null;
 
     /**
      * Constructor
@@ -562,13 +563,25 @@ public class HttpConnector {
         return is;
     }
 
-    /**
-     * Delete specified file
+	/**
+	 * Delete specified file
+	 *
+	 * @param deletedFileId File ID
+	 * @param listener Listener for receiving deletion results
+	 */
+	public void deleteFile(String deletedFileId, HttpDeleteFileListener listener) {
+		ArrayList<String> fileIds = new ArrayList<>();
+		fileIds.add(deletedFileId);
+		deleteFiles(fileIds, listener);
+	}
+
+	/**
+     * Delete specified files
      *
-     * @param deletedFileId File ID
+     * @param deletedFileIds File ID's
      * @param listener Listener for receiving deletion results
      */
-    public void deleteFile(String deletedFileId, HttpEventListener listener) {
+    public void deleteFiles(ArrayList<String> deletedFileIds, HttpDeleteFileListener listener) {
 
         // set capture mode to image
         String errorMessage = setImageCaptureMode();
@@ -580,14 +593,21 @@ public class HttpConnector {
         HttpURLConnection postConnection = createHttpConnection("POST", "/osc/commands/execute");
         JSONObject input = new JSONObject();
         String responseData;
-        mHttpEventListener = listener;
+        mHttpDeleteFileListener = listener;
         InputStream is = null;
 
         try {
             // send HTTP POST
             input.put("name", "camera.delete");
             JSONObject parameters = new JSONObject();
-            parameters.put("fileUri", deletedFileId);
+            JSONArray fileIdArray = new JSONArray();
+
+            for(String fileId : deletedFileIds){
+            	fileIdArray.put(fileId);
+			}
+
+            parameters.put("fileUrls", fileIdArray);
+
             input.put("parameters", parameters);
 
             OutputStream os = postConnection.getOutputStream();
@@ -603,16 +623,16 @@ public class HttpConnector {
             JSONObject output = new JSONObject(responseData);
             String status = output.getString("state");
 
+
             if (status.equals("inProgress")) {
                 getState();
                 mCheckStatusTimer = new Timer(true);
-                DeletedTimerTask deletedTimerTask = new DeletedTimerTask();
-                deletedTimerTask.setDeletedFileId(deletedFileId);
+                DeletedTimerTask deletedTimerTask = new DeletedTimerTask(deletedFileIds);
                 mCheckStatusTimer.scheduleAtFixedRate(deletedTimerTask, CHECK_STATUS_PERIOD_MS,
                         CHECK_STATUS_PERIOD_MS);
             } else if (status.equals("done")) {
-                mHttpEventListener.onObjectChanged(deletedFileId);
-                mHttpEventListener.onCompleted();
+                mHttpDeleteFileListener.onObjectChanged(deletedFileIds);
+                mHttpDeleteFileListener.onCompleted();
                 mFingerPrint = null;
             }
         } catch (IOException e) {
@@ -1026,21 +1046,22 @@ public class HttpConnector {
      * Status check class for file deletion
      */
     private class DeletedTimerTask extends TimerTask {
-        private String mDeletedFileId = null;
+        private final ArrayList<String> deleteFileIds;
 
-        public void setDeletedFileId(String deletedFileId) {
-            mDeletedFileId = deletedFileId;
-        }
+		private DeletedTimerTask(ArrayList<String> deleteFileIds) {
+			this.deleteFileIds = deleteFileIds;
+		}
 
-        @Override
+
+		@Override
         public void run() {
             boolean update = isUpdate();
-            mHttpEventListener.onCheckStatus(update);
+            mHttpDeleteFileListener.onCheckStatus(update);
             if (update) {
                 mCheckStatusTimer.cancel();
                 getState();
-                mHttpEventListener.onObjectChanged(mDeletedFileId);
-                mHttpEventListener.onCompleted();
+                mHttpDeleteFileListener.onObjectChanged(deleteFileIds);
+                mHttpDeleteFileListener.onCompleted();
                 mFingerPrint = null;
             }
         }
