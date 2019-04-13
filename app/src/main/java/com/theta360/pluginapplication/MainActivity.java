@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2018 Ricoh Company, Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -56,7 +56,7 @@ public class MainActivity extends PluginActivity {
 
             @Override
             public void onKeyUp(int keyCode, KeyEvent event) {
-                /**
+                /*
                  * You can control the LED of the camera.
                  * It is possible to change the way of lighting, the cycle of blinking, the color of light emission.
                  * Light emitting color can be changed only LED3.
