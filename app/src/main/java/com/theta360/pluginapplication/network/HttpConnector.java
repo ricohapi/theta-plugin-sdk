@@ -676,6 +676,8 @@ public class HttpConnector {
 
                 if (width == 2048) {
                     imageSize = ImageSize.IMAGE_SIZE_2048x1024;
+                } else if (width == 6720) {
+                    imageSize = ImageSize.IMAGE_SIZE_6720x3360;
                 } else {
                     imageSize = ImageSize.IMAGE_SIZE_5376x2688;
                 }
@@ -709,6 +711,10 @@ public class HttpConnector {
             case IMAGE_SIZE_2048x1024:
                 width = 2048;
                 height = 1024;
+                break;
+            case IMAGE_SIZE_6720x3360:
+                width = 6720;
+                height = 3360;
                 break;
             default:
             case IMAGE_SIZE_5376x2688:

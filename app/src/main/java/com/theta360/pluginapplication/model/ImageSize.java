@@ -24,5 +24,8 @@ public enum ImageSize {
     IMAGE_SIZE_2048x1024,
 
     /** 5376x2688 */
-    IMAGE_SIZE_5376x2688
+    IMAGE_SIZE_5376x2688,
+
+    /** 6720x3360 THETA Z1 Only */
+    IMAGE_SIZE_6720x3360
 }
