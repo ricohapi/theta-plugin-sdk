@@ -66,10 +66,7 @@ public class MainActivity extends PluginActivity {
 
             @Override
             public void onKeyLongPress(int keyCode, KeyEvent event) {
-                if (keyCode == KeyReceiver.KEYCODE_MEDIA_RECORD) {
-                    closeWebApiCamera();
-                    finish();
-                }
+
             }
         });
     }
@@ -91,13 +88,9 @@ public class MainActivity extends PluginActivity {
         // Do end processing
         //close();
 
-        closeWebApiCamera();
-
-        super.onPause();
-    }
-
-    void closeWebApiCamera(){
         //THETA X needs to close WebAPI camera before finishing plugin
         notificationWebApiCameraClose();
+
+        super.onPause();
     }
 }
