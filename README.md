@@ -1,6 +1,6 @@
 # RICOH THETA Plug-in SDK
 
-Version: 2.1.0
+Version: 3.0.0
 
 ## Contents
 
@@ -8,8 +8,8 @@ Version: 2.1.0
 * [Files included in the archive](#files)
 * [Technical requirements for development](#requirements)
 * [Contents of the SDK](#contents)
-* [Getting Started](#started)
-* [Where to find the latest information](#information)
+* [How to Use](#how_to_use)
+* [See Also](#see_also)
 * [Troubleshooting](#troubleshooting)
 * [Trademark Information](#trademark)
 
@@ -40,83 +40,68 @@ Copyright &copy; 2018 Ricoh Company, Ltd.
 <a name="requirements"></a>
 ## Technical requirements for development
 
-The SDK was tested with a RICOH THETA V under the following conditions.
+This SDK has been tested under the following conditions.
 
 ### Camera
 
 #### Hardware
 
-* RICOH THETA V
-
-#### Firmware
-
-* ver.2.30.1 and above
-
-    > Information on checking and updating the firmware is [here](https://theta360.com/en/support/manual/v/content/pc/pc_09.html).
+* RICOH THETA V ; Firmware version must be 2.30.1 or later
+* RICOH THETA Z1
+* RICOH THETA X
 
 ### Development Environment
 
-This SDK has been confirmed to operate under the following conditions.
+This SDK has been confirmed under the following conditions.
 
 #### Operating System
 
-* Windows 10 Version 1709
-* macOS High Sierra ver.10.13
+* Windows 10 Version 21H1
+* macOS Monterey Version 12.2
 
 #### Development environment
 
-* Android&trade; Studio 3.1+
-* gradle 3.1.4
-* Android&trade; SDK (API Level 25)
-* compileSdkVersion 26
-* buildToolsVersion "27.0.3"
+* Android&trade; Studio 4.2.2
+* gradle 3.5.3
+* Android&trade; SDK (API Level 29)
+* compileSdkVersion 29
 * minSdkVersion 25
-* targetSdkVersion 25
+* targetSdkVersion 29
 
 <a name="contents"></a>
 ## Contents of the SDK
 
-* This SDK is a Plug-in sample project of Android&trade; Studio.
-* This SDK implements the basic parts necessary for developing plug-ins. You can create your own development project based on this project.
-* This SDK references a plug-in library ([pluginlibrary](https://github.com/ricohapi/theta-plugin-library)) to support plug-in development of RICOH THETA. 
-* The plug-in library implements the following functions that a standard plug-in should implement.
-    * Get button operation event
-    * Plug-in termination processing
-    * LED control
-    * Control of speaker
+* This SDK is a plug-in sample project of Android&trade; Studio.
+* This SDK just implements shooting picture function via WebAPI. You can modify this sample project to create your own plug-in.
+* This SDK imports ([RICOH THETA Plug-in Library](https://github.com/ricohapi/theta-plugin-library)) which provides support features to develop plug-in.
 
-<a name="started"></a>
-## Getting Started
+<a name="how_to_use"></a>
+## How to Use
 
 1. Import plug-in sdk as a project into Android&trade; Studio.
-1. Please rewrite the sample program in app accordingly and create a program.
+1. Rewrite the sample code like following. By inheriting `PluginActivity` you can use methods provided by RICOH THETA Plug-in Library.
 
-    * By inheriting `PluginActivity` you will be able to use library methods.
+    ```java
+    public class MainActivity extends PluginActivity {
+        @Override
+        protected void onCreate (Bundle savedInstanceState) {
+            super.onCreate (savedInstanceState);
+            setContentView (R.layout.activity_main);
+    ```
 
-        ```java
-        public class MainActivity extends PluginActivity {
-            @Override
-            protected void onCreate (Bundle savedInstanceState) {
-                super.onCreate (savedInstanceState);
-                setContentView (R.layout.activity_main);
-        ```
+1. Connect RICOH THETA with USB cable.
+1. Execute Run by Android&trade; Studio, APK will be installed to RICOH THETA and you can debug it.
 
-    * Please refer to [the web SDK document](https://api.ricoh/docs/theta-plugin/) for development precautions.
+<a name="see_also"></a>
+## See Also
 
-1. Please connect RICOH THETA V with USB.
-1. By running it, installing and debuging is possible.
-1. To build for distribution, build *apk* with *Build APK (s)* in the Build menu.
-
-<a name="information"></a>
-## Where to find the latest information
-
-* The latest information is published on [the WEB site](https://api.ricoh/docs/theta-plugin/).
+* The latest information related to plug-in development is published on [api.ricoh](https://api.ricoh/docs/theta-plugin/).
 * The latest SDK is released on [the GitHub project](https://github.com/ricohapi/theta-plugin-sdk).
 
 <a name="troubleshooting"></a>
 ## Troubleshooting
 
-If you have a request, create an issue on [the GitHub project](https://github.com/ricohapi/theta-plugin-sdk/issues).
+If you had a request or found a problem, please create an issue on [the GitHub project](https://github.com/ricohapi/theta-plugin-sdk/issues).
 
 <a name="trademark"></a>
 ## Trademark Information

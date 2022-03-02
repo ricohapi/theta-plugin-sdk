@@ -674,12 +674,23 @@ public class HttpConnector {
                 JSONObject fileFormat = options.getJSONObject("fileFormat");
                 int width = fileFormat.getInt("width");
 
-                if (width == 2048) {
-                    imageSize = ImageSize.IMAGE_SIZE_2048x1024;
-                } else if (width == 6720) {
-                    imageSize = ImageSize.IMAGE_SIZE_6720x3360;
-                } else {
-                    imageSize = ImageSize.IMAGE_SIZE_5376x2688;
+                switch(width) {
+                    case 2048:
+                        imageSize = ImageSize.IMAGE_SIZE_2048x1024;
+                        break;
+                    case 5376:
+                        imageSize = ImageSize.IMAGE_SIZE_5376x2688;
+                        break;
+                    case 6720:
+                        imageSize = ImageSize.IMAGE_SIZE_6720x3360;
+                        break;
+                    case 5504:
+                        imageSize = ImageSize.IMAGE_SIZE_5504x2752;
+                        break;
+                    case 11008:
+                    default:
+                        imageSize = ImageSize.IMAGE_SIZE_11008x5504;
+                        break;
                 }
             }
         } catch (IOException e) {
@@ -712,14 +723,22 @@ public class HttpConnector {
                 width = 2048;
                 height = 1024;
                 break;
+            case IMAGE_SIZE_5376x2688:
+                width = 5376;
+                height = 2688;
+                break;
             case IMAGE_SIZE_6720x3360:
                 width = 6720;
                 height = 3360;
                 break;
+            case IMAGE_SIZE_5504x2752:
+                width = 5504;
+                height = 2752;
+                break;
+            case IMAGE_SIZE_11008x5504:
             default:
-            case IMAGE_SIZE_5376x2688:
-                width = 5376;
-                height = 2688;
+                width = 11008;
+                height = 5504;
                 break;
         }
 
