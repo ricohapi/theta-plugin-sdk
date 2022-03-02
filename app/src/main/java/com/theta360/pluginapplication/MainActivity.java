@@ -61,7 +61,7 @@ public class MainActivity extends PluginActivity {
                  * It is possible to change the way of lighting, the cycle of blinking, the color of light emission.
                  * Light emitting color can be changed only LED3.
                  */
-                notificationLedBlink(LedTarget.LED3, LedColor.BLUE, 1000);
+                //notificationLedBlink(LedTarget.LED3, LedColor.BLUE, 1000);
             }
 
             @Override
@@ -75,6 +75,9 @@ public class MainActivity extends PluginActivity {
     protected void onResume() {
         super.onResume();
 
+        //THETA X needs to open WebAPI camera before camera.takePicture
+        notificationWebApiCameraOpen();
+
         if (isApConnected()) {
 
         }
@@ -84,6 +87,9 @@ public class MainActivity extends PluginActivity {
     protected void onPause() {
         // Do end processing
         //close();
+
+        //THETA X needs to close WebAPI camera before finishing plugin
+        notificationWebApiCameraClose();
 
         super.onPause();
     }
