@@ -1,6 +1,6 @@
 # RICOH THETA Plug-in SDK
 
-Version: 3.0.2
+Version: 3.0.4
 
 ## Contents
 
@@ -86,7 +86,7 @@ This SDK has been confirmed under the following conditions.
         @Override
         protected void onCreate (Bundle savedInstanceState) {
             super.onCreate (savedInstanceState);
-            setContentView (R.layout.activity_main);
+            setContentView (R.layout.activity_main);
     ```
 
 1. Connect RICOH THETA with USB cable.
