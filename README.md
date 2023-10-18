@@ -1,6 +1,6 @@
 # RICOH THETA Plug-in SDK
 
-Version: 3.1.1
+Version: 3.1.2
 
 ## Contents
 
