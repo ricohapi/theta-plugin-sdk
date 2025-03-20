@@ -1,6 +1,6 @@
 # RICOH THETA Plug-in SDK
 
-Version: 3.1.2
+Version: 3.2.0
 
 ## Contents
 
@@ -56,17 +56,16 @@ This SDK has been confirmed under the following conditions.
 
 #### Operating System
 
-* Windows 10 Version 21H2
-* macOS Monterey Version 12.2
+* Windows 11 Version 23H2
+* macOS Version 14 Sonoma
 
 #### Development environment
 
-* Android&trade; Studio Chipmunk | 2021.2.1 Patch 2
-* Android Gradle Plugin Version 3.6.4
-* Gradle Version 5.6.4
-* Android&trade; SDK (API Level 29)
-* compileSdkVersion 29
-* minSdkVersion 25
+* Android&trade; Studio Meerkat | 2024.3.1
+* Android Gradle Plugin Version 8.9.0
+* Gradle Version 8.11.1
+* compileSdkVersion 34
+* minSdkVersion 26
 * targetSdkVersion 29
 
 <a name="contents"></a>
