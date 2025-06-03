@@ -2,6 +2,9 @@
 
 Version: 3.2.0
 
+> [!NOTE]  
+> If you have any questions or encounter any issues, please visit [Discussions](https://github.com/ricohapi/awesome-theta/discussions?discussions_q=) and create a new discussion thread.
+
 ## Contents
 
 * [Terms of Service](#terms)
@@ -9,8 +12,6 @@ Version: 3.2.0
 * [Technical requirements for development](#requirements)
 * [Contents of the SDK](#contents)
 * [How to Use](#how_to_use)
-* [See Also](#see_also)
-* [Troubleshooting](#troubleshooting)
 * [Trademark Information](#trademark)
 
 <a name="terms"></a>
@@ -73,7 +74,8 @@ This SDK has been confirmed under the following conditions.
 
 * This SDK is a plug-in sample project of Android&trade; Studio.
 * This SDK just implements shooting picture function via WebAPI. You can modify this sample project to create your own plug-in.
-* This SDK imports ([RICOH THETA Plug-in Library](https://github.com/ricohapi/theta-plugin-library)) which provides support features to develop plug-in.
+* This SDK imports [RICOH THETA Plug-in Library](https://github.com/ricohapi/theta-plugin-library) which provides support features to develop plug-in.
+* See also [theta-api-specs](https://github.com/ricohapi/theta-api-specs/tree/main/ricoh-theta-plugin) for API references of development plugin.
 
 <a name="how_to_use"></a>
 ## How to Use
@@ -91,17 +93,6 @@ This SDK has been confirmed under the following conditions.
 
 1. Connect RICOH THETA with USB cable.
 1. Execute Run by Android&trade; Studio, APK will be installed to RICOH THETA and you can debug it.
-
-<a name="see_also"></a>
-## See Also
-
-* The latest information related to plug-in development is published on [api.ricoh](https://api.ricoh/docs/theta-plugin/).
-* The latest SDK is released on [the GitHub project](https://github.com/ricohapi/theta-plugin-sdk).
-
-<a name="troubleshooting"></a>
-## Troubleshooting
-
-If you had a request or found a problem, please create an issue on [the GitHub project](https://github.com/ricohapi/theta-plugin-sdk/issues).
 
 <a name="trademark"></a>
 ## Trademark Information
