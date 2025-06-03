@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: New issue creation is currently disabled
+    url: https://github.com/ricohapi/awesome-theta/discussions?discussions_q=
+    about: Please visit Discussions and create a new discussion thread, if you have any questions or encounter any issues.
